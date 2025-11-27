@@ -1,3 +1,6 @@
+
+
+import {range} from "./util.js"
 function StarRating({ rating }) {
   /*
     Here's the markup for a single star:
@@ -16,12 +19,15 @@ function StarRating({ rating }) {
 
   return (
     <div className="star-wrapper">
-      <img
-        key={crypto.randomUUID()}
-        alt=""
-        className="gold-star"
-        src="/star.svg"
-      />
+      {
+        range(rating).map(() => {
+        return <img
+          key={crypto.randomUUID()}
+          alt=""
+          className="gold-star"
+          src="/star.svg"
+        />})
+      }
     </div>
   )
 }
