@@ -2,6 +2,17 @@
 export function range(start, end, step = 1) {
   const output = []
 
+  let beginNum = start
+  let stopNum = end
+  if (end === undefined) {
+    stopNum = start;
+    beginNum = 0
+  }
+
+  for (let i = beginNum; i < stopNum; i += step) {
+    output.push(i);
+    
+  }
   //  implement a range function
 
   return output
